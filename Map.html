@@ -19,7 +19,10 @@
 </head> 
  
 <body>  
-<div id="map" data-role="page" style="width: 300px; height: 300px;"></div>
+
+<div id="home" data-role="page">
+  <div role="main" class="ui-content">
+  <div id="map" data-role="page" style="width: 300px; height: 300px;"></div>
 <script type="text/javascript">
   $(function() {
     $("#map").googleMap({
@@ -29,5 +32,9 @@
     });
   })
 </script>
+  
+  </div>
+</div>
+
 </body>
 </html>
