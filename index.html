@@ -29,6 +29,140 @@ google.maps.event.addDomListener(window, 'load', initialize);
         window.open('http://www.facebook.com/sharer.php?s=100&p[title]=' + title + '&p[summary]=' + descr + '&p[url]=' + url + '&p[images][0]=' + image, 'sharer', 'top=' + winTop + ',left=' + winLeft + ',toolbar=0,status=0,width=' + winWidth + ',height=' + winHeight);
     }
 </script>
+<script type = "text/javascript" language = "Javascript">
+         // validates if the input is empty and displays the error message
+         function validateNotEmpty( input, id )
+         {
+            var errorDisplay =  document.getElementById( id );
+            var notEmpty;
+            if ( input == "" ) // check if input is empty
+            {
+               errorDisplay.innerHTML = "This is a requiered field";
+               notEmpty = false; // update return value
+            } // end if
+            else
+            {
+               errorDisplay.innerHTML = ""; // clear the error area
+               notEmpty = true; // update return value
+            } // end else
+
+            return notEmpty; // return whether the input is empty
+
+         }// end function validateNotEmpty
+         // validate that  the email has corect format and is allowed 
+         function validateEmail( input )
+         {
+            if( validateNotEmpty( input, 'emailEmptyError' ) )
+            {
+               if ( validateEmailFormat( input ) ) // if correct format
+               {
+                  // send the request for a list of emails that are not
+                  // allowed ot post
+                  try
+                  {
+                     asyncRequest = new XMLHttpRequest();
+
+                     // register event handler
+                     asyncRequest.onreadystatechange = function()
+                     {
+                        checkIfAllowed( input ); 
+                     }; 
+                     asyncRequest.open( 'GET', 'emails.xml', true ); 
+                     asyncRequest.send( null ); 
+                  } // end try
+                  catch ( exception )
+                  {
+                     alert( 'Request Failed' );
+                  } // end catch
+
+               } // end if
+
+            } // end if
+
+         } // end function validateEmail
+         // validate that the email has correct format
+         function validateEmailFormat( input )
+         {
+            var valid = false; // tracks validity of the e-mail address
+            var section = 'user'; // tracks the section of the address
+            for( var i = 0; i < input.length && !valid; i++ )
+            {
+               // if we reach an "@" the user section is over
+               
+               if( section == "user" && input.charAt( i )  == '@' )
+               {
+                  section = "domain"; // update section variable
+               } //  end if
+
+               // if we reach a "." the domain section is over 
+               else if ( section == "domain" && input.charAt( i ) == '.' )
+               {
+                  // if there is something after the "." the email has 
+                  // valid format
+                  if ( i != input.length - 1 )
+                  {
+                     valid = true; // update validity
+                  } //  end if
+
+               } // end else if
+
+            } // end for
+
+            var errorDisplay = 
+               document.getElementById( 'emailFormatError' );
+            
+            // display error if email does not have valid format
+            if ( !valid )
+            {
+               errorDisplay.innerHTML = "E-mail has incorrect format";
+            } // end if
+            else
+            {
+               errorDisplay.innerHTML = "";  // clear error area
+            } // end else
+
+            return valid; // return validity tracker
+         }        
+         // check if the e-mail address user entered is not allowed
+         // to post feedback
+         function checkIfAllowed( input )
+         {
+            if ( asyncRequest.readyState == 4 && 
+              asyncRequest.status == 200 &&  asyncRequest.responseXML )
+            {
+               // get the emails from the responseXML
+				var emails = asyncRequest.responseXML.getElementByTagName("email");
+				var allowed = true;
+				
+				for(var i = 0; i<emails.length && allowed; i++)
+				{
+					var email = emails.item(i).firstChild.nodeValue;
+					
+					if (input == email)
+					{
+						allowed = false;
+					}
+				}
+				
+				var displayError = document.getElementById("emailNotAllowedError");
+				
+				if(!allowed)
+				{
+					displayError.innerHTML = input + " is not allowed to submit feedback.";
+				}
+				else
+				{
+					displayError.innerHTML = "";	
+				}			
+               // initialize return value
+               // iterate over the list of e-mails not allowed to post
+               // feedback and check if the input matches any of them        
+               // display appropriate error message
+               // clear the error area              
+	   		} // end of if
+         } // end function checkIfAllowed
+
+</script>
 </head> 
 <!-- start bady-->
 <body class="ui-mobile-viewport">    
@@ -83,7 +217,7 @@ google.maps.event.addDomListener(window, 'load', initialize);
       </div>
       <div class="ui-block-b" style="height:100%">
           <center>
-          <div is="icon" style="width:85px; height:90px; position:relative">          <span class="ui-li-count" style="position:absolute; display:none; z-index:1; right:0; top:6px;"></span>          <a href="#" class="ui-btn ui-mini ui-corner-all ui-shadow" style="display:block;margin:5px;height:50%;background-image:url(image/icon_feedback.png); background-size: 80% 80%; background-position: 50% 50%; background-repeat: no-repeat no-repeat;"></a>          <div style="text-align:center;">Feedback</div>        </div>
+          <div is="icon" style="width:85px; height:90px; position:relative">          <span class="ui-li-count" style="position:absolute; display:none; z-index:1; right:0; top:6px;"></span>          <a href="Feedback.html" class="ui-btn ui-mini ui-corner-all ui-shadow" style="display:block;margin:5px;height:50%;background-image:url(image/icon_feedback.png); background-size: 80% 80%; background-position: 50% 50%; background-repeat: no-repeat no-repeat;"></a>          <div style="text-align:center;">Feedback</div>        </div>
           </center>
       </div>
       <div class="ui-block-c" style="height:100%">
