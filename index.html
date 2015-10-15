@@ -7,9 +7,22 @@
 	<title>Home</title> 
 	<meta name="viewport" content="width=device-width, initial-scale=1"> 
 	<!-- Link to JQuery.com to get those functions and styles -->
-	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0a4.1/jquery.mobile-1.0a4.1.min.css" />
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	<script src="http://maps.googleapis.com/maps/api/js"></script>
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.0a4.1/jquery.mobile-1.0a4.1.min.css" />
 	<script src="http://code.jquery.com/jquery-1.5.2.min.js"></script>
 	<script src="http://code.jquery.com/mobile/1.0a4.1/jquery.mobile-1.0a4.1.min.js"></script>
+   <script>
+function initialize() {
+  var mapProp = {
+    center:new google.maps.LatLng(-37.8485414,145.1136231),
+    zoom:16,
+    mapTypeId:google.maps.MapTypeId.ROADMAP
+  };
+  var map=new google.maps.Map(document.getElementById("map_canvas"),mapProp);
+}
+google.maps.event.addDomListener(window, 'load', initialize);
+</script>	
 </head> 
 <!-- start bady-->
 <body class="ui-mobile-viewport">    
