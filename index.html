@@ -21,6 +21,14 @@ function initialize() {
 }
 google.maps.event.addDomListener(window, 'load', initialize);
 </script>
+
+<script>
+    function fbShare(url, title, descr, image, winWidth, winHeight) {
+        var winTop = (screen.height / 2) - (winHeight / 2);
+        var winLeft = (screen.width / 2) - (winWidth / 2);
+        window.open('http://www.facebook.com/sharer.php?s=100&p[title]=' + title + '&p[summary]=' + descr + '&p[url]=' + url + '&p[images][0]=' + image, 'sharer', 'top=' + winTop + ',left=' + winLeft + ',toolbar=0,status=0,width=' + winWidth + ',height=' + winHeight);
+    }
+</script>
 </head> 
 <!-- start bady-->
 <body class="ui-mobile-viewport">    
@@ -70,7 +78,7 @@ google.maps.event.addDomListener(window, 'load', initialize);
     <div class="ui-grid-b" style="height:95px">
       <div class="ui-block-a" style="height:100%">
           <center>
-          <div is="icon" style="width:85px; height:90px; position:relative">          <span class="ui-li-count" style="position:absolute; display:none; z-index:1; right:0; top:6px;"></span>          <a href="Facebook.html" class="ui-btn ui-mini ui-corner-all ui-shadow" style="display:block;margin:5px;height:50%;background-image:url(image/icon_share.png); background-size: 80% 80%; background-position: 50% 50%; background-repeat: no-repeat no-repeat;"></a>          <div style="text-align:center;">Share</div>        </div>
+          <div is="icon" style="width:85px; height:90px; position:relative">          <span class="ui-li-count" style="position:absolute; display:none; z-index:1; right:0; top:6px;"></span>          <a href="javascript:fbShare('http://jsfiddle.net/stichoza/EYxTJ/', 'Fb Share', 'Facebook share popup', 'http://goo.gl/dS52U', 520, 350)" class="ui-btn ui-mini ui-corner-all ui-shadow" style="display:block;margin:5px;height:50%;background-image:url(image/icon_share.png); background-size: 80% 80%; background-position: 50% 50%; background-repeat: no-repeat no-repeat;"></a>          <div style="text-align:center;">Share</div>        </div>
           </center>
       </div>
       <div class="ui-block-b" style="height:100%">
@@ -86,6 +94,9 @@ google.maps.event.addDomListener(window, 'load', initialize);
     </div>
   </div>
 </div>
+
+
+
 
 <!-- Start home page -->
 
