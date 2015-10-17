@@ -3,17 +3,22 @@
 <html><head> 
 	<title>Map</title> 
 	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	<!-- Google Map API-->
 	<script src="http://maps.googleapis.com/maps/api/js"></script>
     <link rel="stylesheet" href="http://code.jquery.com/mobile/1.0a4.1/jquery.mobile-1.0a4.1.min.css" />
 	<script src="http://code.jquery.com/jquery-1.5.2.min.js"></script>
 	<script src="http://code.jquery.com/mobile/1.0a4.1/jquery.mobile-1.0a4.1.min.js"></script>
+	<!-- JavaScript for display Google Map -->
    <script>
 function initialize() {
   var mapProp = {
+  //set the location of the google map
     center:new google.maps.LatLng(-37.8485414,145.1136231),
+	// Google map zoom
     zoom:16,
     mapTypeId:google.maps.MapTypeId.ROADMAP
   };
+  // google map display at div_id map_canvas
   var map=new google.maps.Map(document.getElementById("map_canvas"),mapProp);
 }
 google.maps.event.addDomListener(window, 'load', initialize);
@@ -39,23 +44,6 @@ Victoria 3216 Australia </p></a>
   </center>
   </div>
 </div>
-<!--
-<div id="map" data-role="page">
- <div data-role="header" data-position="fixed">
-    <h3>Map</h3>
-  </div>
-  <div role="main" class="ui-content">
-	<center>
-    
-    </center>
-  </div>
-</div>
 
-        $(function() {
-                
-                var yourStartLatLng = new google.maps.LatLng(-37.8485414, 145.1136231);
-                $('#map_canvas').gmap({'center': yourStartLatLng});
-        });
--->
 </body>
 </html>

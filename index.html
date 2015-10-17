@@ -1,25 +1,26 @@
-<!-- this project is used by Deakin University Sit313 Assignment 1
-	Made by: Kuan Yang, 212544563 -->
 
 <!DOCTYPE html> 
 <html> 
 <head> 
 	<title>Deakin Open Day</title> 
 	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	<!-- Facebook meta property -->
     <meta property="og:title" content="Deakin Open Day Mobile Site" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="http://yk442755675.github.io/Assignment2" />
-<meta property="og:image" content="image/Deakin_open_day" />
-<meta property="og:description" content="Welcome to our Deakin Open Day Mobile website. From there you can find all information about Deakin and the upcomming event."/>
-	
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="http://yk442755675.github.io/Assignment2" />
+	<meta property="og:image" content="image/Deakin_open_day" />
+	<meta property="og:description" content="Welcome to our Deakin Open Day Mobile website. From there you can find all information about Deakin and the upcomming event."/>
+		
     <link rel="stylesheet" href="http://code.jquery.com/mobile/1.0a4.1/jquery.mobile-1.0a4.1.min.css" />
     <link rel="stylesheet" href="stylesheets/rrssb.css" />
-    
+    <!-- facebook share api -->
     <script src="js/rrssb.min.js"></script>
+	<!-- google map api -->
 	<script src="http://maps.googleapis.com/maps/api/js"></script>
 	<script src="http://code.jquery.com/jquery-1.5.2.min.js"></script>
 	<script src="http://code.jquery.com/mobile/1.0a4.1/jquery.mobile-1.0a4.1.min.js"></script>
    <script>
+   //google map function
 function initialize() {
   var mapProp = {
     center:new google.maps.LatLng(-37.8485414,145.1136231),
@@ -31,7 +32,7 @@ function initialize() {
 google.maps.event.addDomListener(window, 'load', initialize);
 </script>
 
-
+<!-- JavaScript for validate user input -->
 <script type = "text/javascript" language = "Javascript">
          // validates if the input is empty and displays the error message
          function validateNotEmpty( input, id )
@@ -176,59 +177,88 @@ google.maps.event.addDomListener(window, 'load', initialize);
     <div class="ui-grid-b" style="height:95px">
       <div class="ui-block-a" style="height:100%">
         <center>
-          
-          <div is="icon" style="width:85px; height:90px; position:relative">          				
+			<div is="icon" style="width:85px; height:90px; position:relative">          				
+				<span class="ui-li-count" style="position:absolute; display:none; z-index:1; right:0; top:6px;"></span>          
+				<a href="Faculty.html" class="ui-btn ui-mini ui-corner-all ui-shadow" style="display:block;margin:5px;height:50%;background-image:url(image/icon_faculty.png); background-size: 80% 80%; background-position: 50% 50%; background-repeat: no-repeat no-repeat;"></a>          
+				<div style="text-align:center;">Faculty</div>        
+			</div>
+         </center>
+      </div>
+      <div class="ui-block-b" style="height:100%">
+          <center>
+			  <div is="icon" style="width:85px; height:90px; position:relative">          
+				  <span class="ui-li-count" style="position:absolute; display:none; z-index:1; right:0; top:6px;"></span>          
+				  <a href="Information.html" class="ui-btn ui-mini ui-corner-all ui-shadow" style="display:block;margin:5px;height:50%;background-image:url(image/icon_information.png); background-size: 80% 80%; background-position: 50% 50%; background-repeat: no-repeat no-repeat;"></a>          
+				  <div style="text-align:center;">Information</div>        
+			  </div>
+          </center>
+      </div>
+      <div class="ui-block-c" style="height:100%">
+          <center>
+			  <div is="icon" style="width:85px; height:90px; position:relative">          
+				  <span class="ui-li-count" style="position:absolute; display:none; z-index:1; right:0; top:6px;"></span>          
+				  <a href="Map.html" class="ui-btn ui-mini ui-corner-all ui-shadow" style="display:block;margin:5px;height:50%;background-image:url(image/icon_map.png); background-size: 80% 80%; background-position: 50% 50%; background-repeat: no-repeat no-repeat;"></a>          
+				  <div style="text-align:center;">Map</div>        
+			  </div>
+          </center>
+      </div>
+    </div>
+    <div style="height:10px"></div>
+    <div class="ui-grid-b" style="height:95px">
+      <div class="ui-block-a" style="height:100%">
+          <center>
+			<div is="icon" style="width:85px; height:90px; position:relative">          
+				<span class="ui-li-count" style="position:absolute; display:none; z-index:1; right:0; top:6px;"></span>          
+				<a href="Contact.html" class="ui-btn ui-mini ui-corner-all ui-shadow" style="display:block;margin:5px;height:50%;background-image:url(image/icon_contact.png); background-size: 80% 80%; background-position: 50% 50%; background-repeat: no-repeat no-repeat;"></a>          
+				<div style="text-align:center;">Contact</div>        
+			</div>
+          </center>
+      </div>
+      <div class="ui-block-b" style="height:100%">
+          <center>
+			  <div is="icon" style="width:85px; height:90px; position:relative">          
+				  <span class="ui-li-count" style="position:absolute; display:none; z-index:1; right:0; top:6px;"></span>          
+				  <a href="building.html" class="ui-btn ui-mini ui-corner-all ui-shadow" style="display:block;margin:5px;height:50%;background-image:url(image/icon_presentation.png); background-size: 80% 80%; background-position: 50% 50%; background-repeat: no-repeat no-repeat;"></a>          
+				  <div style="text-align:center;">Building</div>        
+			  </div>
+          </center>
+      </div>
+      <div class="ui-block-c" style="height:100%">
+          <center>
+			  <div is="icon" style="width:85px; height:90px; position:relative">          
+				  <span class="ui-li-count" style="position:absolute; display:none; z-index:1; right:0; top:6px;"></span>          <a href="Events.html" class="ui-btn ui-mini ui-corner-all ui-shadow" style="display:block;margin:5px;height:50%;background-image:url(image/icon_event.png); background-size: 80% 80%; background-position: 50% 50%; background-repeat: no-repeat no-repeat;"></a>          
+				  <div style="text-align:center;">Events</div>        
+			  </div>
+          </center>
+      </div>
+    </div>
+    <div style="height:10px"></div>
+    <div class="ui-grid-b" style="height:95px">
+      <div class="ui-block-a" style="height:100%">
+        <center>
+			<div is="icon" style="width:85px; height:90px; position:relative">          
 			<span class="ui-li-count" style="position:absolute; display:none; z-index:1; right:0; top:6px;"></span>          
-            	<a href="Faculty.html" class="ui-btn ui-mini ui-corner-all ui-shadow" style="display:block;margin:5px;height:50%;background-image:url(image/icon_faculty.png); background-size: 80% 80%; background-position: 50% 50%; background-repeat: no-repeat no-repeat;"></a>          <div style="text-align:center;">Faculty</div>        </div>
-          </center>
+			<a href="https://www.facebook.com/sharer/sharer.php?u=yk442755675.github.io/Assignment2/index.html" class="ui-btn ui-mini ui-corner-all ui-shadow" style="display:block;margin:5px;height:50%;background-image:url(image/icon_share.png); background-size: 80% 80%; background-position: 50% 50%; background-repeat: no-repeat no-repeat;"></a> <span class="rrssb-icon">     
+			<div style="text-align:center;">Share</div>		
+			</div>
+        </center>
       </div>
       <div class="ui-block-b" style="height:100%">
           <center>
-          <div is="icon" style="width:85px; height:90px; position:relative">          <span class="ui-li-count" style="position:absolute; display:none; z-index:1; right:0; top:6px;"></span>          <a href="Information.html" class="ui-btn ui-mini ui-corner-all ui-shadow" style="display:block;margin:5px;height:50%;background-image:url(image/icon_information.png); background-size: 80% 80%; background-position: 50% 50%; background-repeat: no-repeat no-repeat;"></a>          <div style="text-align:center;">Information</div>        </div>
+			<div is="icon" style="width:85px; height:90px; position:relative">          
+				<span class="ui-li-count" style="position:absolute; display:none; z-index:1; right:0; top:6px;"></span>          
+				<a href="Feedback.html" class="ui-btn ui-mini ui-corner-all ui-shadow" style="display:block;margin:5px;height:50%;background-image:url(image/icon_feedback.png); background-size: 80% 80%; background-position: 50% 50%; background-repeat: no-repeat no-repeat;"></a>          
+				<div style="text-align:center;">Feedback</div>        
+			</div>
           </center>
       </div>
       <div class="ui-block-c" style="height:100%">
           <center>
-          <div is="icon" style="width:85px; height:90px; position:relative">          <span class="ui-li-count" style="position:absolute; display:none; z-index:1; right:0; top:6px;"></span>          <a href="Map.html" class="ui-btn ui-mini ui-corner-all ui-shadow" style="display:block;margin:5px;height:50%;background-image:url(image/icon_map.png); background-size: 80% 80%; background-position: 50% 50%; background-repeat: no-repeat no-repeat;"></a>          <div style="text-align:center;">Map</div>        </div>
-          </center>
-      </div>
-    </div>
-    <div style="height:10px"></div>
-    <div class="ui-grid-b" style="height:95px">
-      <div class="ui-block-a" style="height:100%">
-          <center>
-          <div is="icon" style="width:85px; height:90px; position:relative">          <span class="ui-li-count" style="position:absolute; display:none; z-index:1; right:0; top:6px;"></span>          <a href="Contact.html" class="ui-btn ui-mini ui-corner-all ui-shadow" style="display:block;margin:5px;height:50%;background-image:url(image/icon_contact.png); background-size: 80% 80%; background-position: 50% 50%; background-repeat: no-repeat no-repeat;"></a>          <div style="text-align:center;">Contact</div>        </div>
-          </center>
-      </div>
-      <div class="ui-block-b" style="height:100%">
-          <center>
-          <div is="icon" style="width:85px; height:90px; position:relative">          <span class="ui-li-count" style="position:absolute; display:none; z-index:1; right:0; top:6px;"></span>          <a href="building.html" class="ui-btn ui-mini ui-corner-all ui-shadow" style="display:block;margin:5px;height:50%;background-image:url(image/icon_presentation.png); background-size: 80% 80%; background-position: 50% 50%; background-repeat: no-repeat no-repeat;"></a>          <div style="text-align:center;">Building</div>        </div>
-          </center>
-      </div>
-      <div class="ui-block-c" style="height:100%">
-          <center>
-          <div is="icon" style="width:85px; height:90px; position:relative">          <span class="ui-li-count" style="position:absolute; display:none; z-index:1; right:0; top:6px;"></span>          <a href="Events.html" class="ui-btn ui-mini ui-corner-all ui-shadow" style="display:block;margin:5px;height:50%;background-image:url(image/icon_event.png); background-size: 80% 80%; background-position: 50% 50%; background-repeat: no-repeat no-repeat;"></a>          <div style="text-align:center;">Events</div>        </div>
-          </center>
-      </div>
-    </div>
-    <div style="height:10px"></div>
-    <div class="ui-grid-b" style="height:95px">
-      <div class="ui-block-a" style="height:100%">
-          <center>
-          <div is="icon" style="width:85px; height:90px; position:relative">          <span class="ui-li-count" style="position:absolute; display:none; z-index:1; right:0; top:6px;"></span>          <a href="https://www.facebook.com/sharer/sharer.php?u=yk442755675.github.io/Assignment2/index.html" class="ui-btn ui-mini ui-corner-all ui-shadow" style="display:block;margin:5px;height:50%;background-image:url(image/icon_share.png); background-size: 80% 80%; background-position: 50% 50%; background-repeat: no-repeat no-repeat;"> <span class="rrssb-icon">
-              </a>          <div style="text-align:center;">Share</div>        </div>
-          </center>
-      </div>
-      <div class="ui-block-b" style="height:100%">
-          <center>
-          <div is="icon" style="width:85px; height:90px; position:relative">          <span class="ui-li-count" style="position:absolute; display:none; z-index:1; right:0; top:6px;"></span>          <a href="Feedback.html" class="ui-btn ui-mini ui-corner-all ui-shadow" style="display:block;margin:5px;height:50%;background-image:url(image/icon_feedback.png); background-size: 80% 80%; background-position: 50% 50%; background-repeat: no-repeat no-repeat;"></a>          <div style="text-align:center;">Feedback</div>        </div>
-          </center>
-      </div>
-      <div class="ui-block-c" style="height:100%">
-          <center>
-
-          <div is="icon" style="width:85px; height:90px; position:relative">          <span class="ui-li-count" style="position:absolute; display:none; z-index:1; right:0; top:6px;"></span>          <a href="Developer.html" class="ui-btn ui-mini ui-corner-all ui-shadow" style="display:block;margin:5px;height:50%;background-image:url(image/icon_developer.png); background-size: 80% 80%; background-position: 50% 50%; background-repeat: no-repeat no-repeat;"></a>          <div style="text-align:center;">Developer</div>        </div>
-
+			  <div is="icon" style="width:85px; height:90px; position:relative">          
+				  <span class="ui-li-count" style="position:absolute; display:none; z-index:1; right:0; top:6px;"></span>          
+				  <a href="Developer.html" class="ui-btn ui-mini ui-corner-all ui-shadow" style="display:block;margin:5px;height:50%;background-image:url(image/icon_developer.png); background-size: 80% 80%; background-position: 50% 50%; background-repeat: no-repeat no-repeat;"></a>          
+				  <div style="text-align:center;">Developer</div>        
+			  </div>
           </center>
       </div>
     </div>
